@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}VotePower</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/styles/styles.css">
+</head>
+<!--Modal popup-->
+<!-- <div id="myModal" class="modal fade in">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Are you registered to vote?</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <a href=./registration.html>Click here for more information</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg mb-0 navbar-dark" style="background-color: #407088;font-size:20px;">
+    <a class="navbar-brand" href="./index.html" style="font-size:30px;">VotePower</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./registration.html">Registration Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pollsite.html">Pollsite</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./voteinfo.html">Voting information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./upcomingelections.html">Upcoming Elections</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body class="d-flex flex-column" style="min-height: 100vh">
+  <main class="flex-fill">
+  </main>
+  <!--Footer-->
+  <footer class="footer border-top pt-md-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md"></div>
+        <div class="col-3 col-md">About Us</div>
+        <div class="col-3 col-md">Contact Us</div>
+        <div class="col-3 col-md">
+          <a href="#"><img src="../AppleLogo.png" alt="Download on iOS" width="150px"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</html>
+<!-- JavaScript for alert -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!--Script for Modal-->
+<script>
+  $(document).ready(function() {
+    //Check for cookie
+    if (document.cookie.indexOf("ModalShown=true") < 0) {
+      $("#myModal").modal("show");
+      //Set cookie so modal doesn't return
+      $("#myModalClose").click(function() {
+        $("#myModal").modal("hide");
+      });
+      document.cookie = "ModalShown=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    }
+  });
+</script>
