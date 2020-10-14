@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <title>{{title}}VotePower</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="../static/styles/styles.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='styles/styles.css')}}">
 </head>
 <!--Modal popup-->
-<!-- <div id="myModal" class="modal fade in">
+<div id="myModal" class="modal fade in">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -16,11 +16,11 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <a href=./registration.html>Click here for more information</a>
+        <a href="{{url_for('registration')}}">Click here for more information</a>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <!-- Navbar -->
 <header>
@@ -35,7 +35,7 @@
           <a class="nav-link" href="{{url_for('registration')}}">Registration Details</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('pollsite')}}">Pollsite</a>
+          <a class="nav-link" href="{{url_for('pollsite')}}">Poll Site</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('voteinfo')}}">Voting information</a>
@@ -48,7 +48,7 @@
   </nav>
 </header>
 
-<body class="d-flex flex-column" style="min-height: 100vh; background-color:#D9B7FB">
+<body class="d-flex flex-column" style="min-height: 100vh; background-color:">
   <main class="flex-fill">
   </main>
   <!--Footer-->
@@ -59,7 +59,7 @@
         <div class="col-3 col-md">About Us</div>
         <div class="col-3 col-md">Contact Us</div>
         <div class="col-3 col-md">
-          <a href="#"><img src="../AppleLogo.png" alt="Download on iOS" width="150px"></a>
+          <a href="#"><img src="{{url_for('static',filename='AppleLogo.png')}}" alt="Download on iOS" width="150px"></a>
         </div>
       </div>
     </div>

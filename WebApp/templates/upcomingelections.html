@@ -27,7 +27,7 @@
           <a class="nav-link" href="{{url_for('registration')}}">Registration Details</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('pollsite')}}">Pollsite</a>
+          <a class="nav-link" href="{{url_for('pollsite')}}">Poll Site</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('voteinfo')}}">Voting information</a>
@@ -60,7 +60,7 @@
         <div class="col-6 col-md">About Us</div>
         <div class="col-6 col-md">Contact Us</div>
         <div class="col-6 col-md">
-          <a href="#"><img src="../AppleLogo.png" alt="Download on iOS" width="150px"></a>
+          <a href="#"><img src="{{url_for('static',filename='AppleLogo.png')}}" alt="Download on iOS" width="150px"></a>
         </div>
       </div>
     </div>
