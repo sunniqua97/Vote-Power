@@ -7,3 +7,17 @@ body{
   padding: .75rem 0;
   margin-top: auto;
 }
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.form-control{
+  border-radius: 15px;
+}
+
+.card{
+  border-radius: 20px;
+}
