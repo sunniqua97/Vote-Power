@@ -1,19 +1,25 @@
 import requests
 import pprint
 import json
+#import googlemaps
 import os
 from dotenv import load_dotenv
 from flask import flash
 
 # get a key here https://console.developers.google.com/apis/credentials
 key = os.getenv('CIVICS_API_KEY')
+mapkey = os.getenv('MAP_API_KEY')
 
 # Google Civics VoterInfoQuery API to get pollsite location
 def poll_search(address):
-    address.replace('+','%20')
+    params = {
+        'address': address,
+        'key': key
+    }
+    #address.replace('+','%20')
     # call api
-    full_url = 'https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=' + address + '&key=' + key
-    req = requests.get(full_url)
+    url = 'https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?'
+    req = requests.get(url, params=params)
     data = req.json()
     try:
         # GCivic poll location information
@@ -32,3 +38,5 @@ def poll_search(address):
     except KeyError:
         flash("Sorry, we couldn't find a poll location for the address you've entered.")
     return data
+
+

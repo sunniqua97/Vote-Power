@@ -20,7 +20,7 @@ def registration():
 def pollsite():
     form = AddressForm()
     if form.validate_on_submit():
-        address = request.form.get('address')
+        address = request.form['address']
         data = poll_search(address)
     return render_template("pollsite.html",form=form)
 
