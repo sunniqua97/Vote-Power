@@ -1,6 +1,8 @@
 # api keys
 .env
 
+# extra
 
+env/
 venv/
-__pycache__
+_pycache_/

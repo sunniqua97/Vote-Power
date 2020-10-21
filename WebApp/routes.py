@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, redirect
 from forms import AddressForm
-from api import poll_search
+import api
 import sys
 import os
 import logging
@@ -19,10 +19,15 @@ def registration():
 @app.route('/pollsite',methods=['GET','POST'])
 def pollsite():
     form = AddressForm()
+    origin = ""
+    destination = ""
     if form.validate_on_submit():
-        address = request.form['address']
-        data = poll_search(address)
-    return render_template("pollsite.html",form=form)
+        address = request.form.get('address')
+        origin = address
+        destination = api.poll_search(address)
+        # print(origin)
+        # print(destination)
+    return render_template("pollsite.html",form=form,origin=origin,destination=destination)
 
 @app.route('/voteinfo',methods=['GET'])
 def voteinfo():
