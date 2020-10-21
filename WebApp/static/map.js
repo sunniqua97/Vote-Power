@@ -1,4 +1,5 @@
 // create map
+let map;
 function initMap() {
   const directionsRenderer = new google.maps.DirectionsRenderer();
   const directionsService = new google.maps.DirectionsService();
@@ -8,5 +9,20 @@ function initMap() {
   });
   directionsRenderer.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsRenderer);
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
+  calculateAndDisplayRoute(directionsService, directionsRenderer);
 }
+
+//autocomplete function
+function searchAutocomplete(){
+    var input = document.getElementById('search_term');
+    new google.maps.places.Autocomplete(input);
+
+}
+function allFunctions(){
+    initMap();
+    searchAutocomplete();
+}
+
+//calls searchAutocomplete on click
+google.maps.event.addDomListener(searchAutocomplete);
+
