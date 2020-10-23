@@ -15,9 +15,15 @@ function initMap() {
 //autocomplete function
 function searchAutocomplete(){
     var input = document.getElementById('search_term');
-    new google.maps.places.Autocomplete(input);
+    var options = {
+      types: ['address'],
+      componentRestrictions: {country: 'US'}
+    };
+
+    new google.maps.places.Autocomplete(input, options);
 
 }
+
 function allFunctions(){
     initMap();
     searchAutocomplete();
@@ -25,4 +31,6 @@ function allFunctions(){
 
 //calls searchAutocomplete on click
 google.maps.event.addDomListener(searchAutocomplete);
+
+
 
