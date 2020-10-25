@@ -6,7 +6,7 @@ import os
 import logging
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config.from_object('config.Config')
 
 @app.route('/',methods=['GET'])
 def home():
