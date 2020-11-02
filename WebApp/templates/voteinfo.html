@@ -68,9 +68,11 @@
         <div class="col-md-5 col-6">
           {% for item in office %}
           <ul style="list-style-type:none;">
+            {% for item2 in item.officialIndices %}
             <li>
               {{item.name}}
             </li>
+            {% endfor %}
           </ul>
           {% endfor %}
         </div>
