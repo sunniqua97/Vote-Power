@@ -29,9 +29,21 @@ def pollsite():
         # print(destination)
     return render_template("pollsite.html",form=form,origin=origin,destination=destination)
 
-@app.route('/voteinfo',methods=['GET'])
+@app.route('/voteinfo',methods=['GET','POST'])
 def voteinfo():
-    return render_template("voteinfo.html")
+    form = AddressForm()
+    test = ""
+    office = ""
+    official = ""
+    if form.validate_on_submit():
+        try:
+            address = request.form.get('address')
+            test = api.rep_search(address)
+            office =  test['offices']
+            official=test['officials']
+        except KeyError:
+            flash("error")
+    return render_template("voteinfo.html",form=form,office=office,official=official)
 
 @app.route('/upcomingelections',methods=['GET'])
 def upcomingelections():

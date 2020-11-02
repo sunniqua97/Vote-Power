@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -7,212 +7,194 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/styles/styles.css">
 </head>
-<!-- Navbar -->
-<header>
-  {% include "nav.html" %}
-</header>
 
-<!--jumbotron-->
-<div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
-  <div class="container">
-    <h1 class="display-4 text-center text-light font-weight-bold pt-5">Registration Details</h1>
+<body class="d-flex flex-column bg-light" style="min-height: 100vh;">
+  <header> {% include "nav.html" %} </header>
+  <!--jumbotron-->
+  <div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
+    <div class="container">
+      <h1 class="display-4 text-center text-light font-weight-bold pt-5">Registration Details</h1>
+    </div>
   </div>
-</div>
-<!--Registration Buttons -->
-<!-- id: btn-r = register btn-c = check-->
-
-<body class="d-flex flex-column" style="min-height: 100vh;">
+  <!--Registration Buttons -->
+  <!-- id: btn-r = register btn-c = check-->
   <main class="flex-fill">
     <div class="container">
       <div class="form-group row" id="btn-content">
         <button type="button" class="btn col-md-6" id="btn-R">
           <h3> Register To Vote </h3>
           <svg width="15em" height="20em" viewBox="0 0 16 16" class="bi bi-clipboard-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-            <path fill-rule="evenodd"
-              d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zM8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
+            <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+            <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zM8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z"></path>
           </svg>
         </button>
         <button type="button" class="btn col-md-6" id="btn-C">
           <h3>Check Registration</h3>
           <svg width="15em" height="20em" viewBox="0 0 16 16" class="bi bi-clipboard-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-            <path fill-rule="evenodd"
-              d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+            <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+            <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
           </svg>
         </button>
       </div>
     </div>
   </main>
-
   <!--Modal for Register to Vote-->
   <div class="modal fade" id="modalWindow-R" role="dialog">
     <div class="modal-dialog modal-sm vertical-align-center">
       <div class="modal-content">
         <div class="modal-header modal-dialog-centered">
           <h5>Register To Vote</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         <div class="modal-body">
           <div class="dropdown">
             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownStates" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> States </button>
             <div class=" dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton" id="selectStates">
-              <a class="dropdown-item" href="https://www.alabamainteractive.org/sos/voter_registration/voterRegistrationWelcome.action" target=_blank>Alabama</a>
-              <a class="dropdown-item" href="https://voterregistration.alaska.gov/Registration/RegistrationDetails?haveValidAKDL=true" target=_blank>Alaska</a>
-              <a class="dropdown-item" href="https://servicearizona.com/VoterRegistration/register?execution=e1s1" target=_blank>Arizona</a>
-              <a class="dropdown-item" href="https://www.sos.arkansas.gov/elections/voter-information/voter-registration-information/" target=_blank>Arkansas</a>
-              <a class="dropdown-item" href="https://registertovote.ca.gov/" target=_blank>California</a>
-              <a class="dropdown-item" href="https://www.sos.state.co.us/voter/pages/pub/olvr/verifyNewVoter.xhtml" target=_blank>Colorado</a>
-              <a class="dropdown-item" href="https://voterregistration.ct.gov/OLVR/welcome.do" target=_blank>Connecticut</a>
-              <a class="dropdown-item" href="https://ivote.de.gov/VoterView/registrant/newregistrant" target=_blank>Delaware</a>
-              <a class="dropdown-item" href="https://registertovoteflorida.gov/home" target=_blank>Florida</a>
-              <a class="dropdown-item" href="https://registertovote.sos.ga.gov/GAOLVR/welcome.do#no-back-button" target=_blank>Georgia</a>
-              <a class="dropdown-item" href="https://olvr.hawaii.gov/" target=_blank>Hawaii</a>
-              <a class="dropdown-item" href="https://elections.sos.idaho.gov/ElectionLink/ElectionLink/ApplicationInstructions.aspx" target=_blank>Idaho</a>
-              <a class="dropdown-item" href="https://ova.elections.il.gov/RegistrationClosed.aspx" target=_blank>Illinois</a>
-              <a class="dropdown-item" href="https://indianavoters.in.gov/" target=_blank>Indiana</a>
-              <a class="dropdown-item" href="https://mymvd.iowadot.gov/Account/Login?ReturnUrl=%2fVoterRegistration" target=_blank>Iowa</a>
-              <a class="dropdown-item" href="https://www.kdor.ks.gov/Apps/VoterReg/Default.aspx" target=_blank>Kansas</a>
-              <a class="dropdown-item" href="https://vrsws.sos.ky.gov/ovrweb/" target=_blank>Kentucky</a>
-              <a class="dropdown-item" href="https://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx?Referrer=https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx" target=_blank>Louisiana</a>
-              <a class="dropdown-item" href="https://www.maine.gov/sos/cec/elec/voter-info/votreg.html" target=_blank>Maine</a>
-              <a class="dropdown-item" href="https://voterservices.elections.maryland.gov/OnlineVoterRegistration/InstructionsStep1" target=_blank>Maryland</a>
-              <a class="dropdown-item" href="https://www.sec.state.ma.us/ele/eleifv/howreg.htm" target=_blank>Massachusetts</a>
-              <a class="dropdown-item" href="https://mvic.sos.state.mi.us/RegisterVoter" target=_blank>Michigan</a>
-              <a class="dropdown-item" href="https://www.sos.state.mn.us/elections-voting/register-to-vote/" target=_blank>Minnesota</a>
-              <a class="dropdown-item" href="https://www.msvoterid.ms.gov/Pages/VoterIDHowToRegister.htm" target=_blank>Mississippi</a>
-              <a class="dropdown-item" href="https://s1.sos.mo.gov/elections/voterregistration" target=_blank>Missouri</a>
-              <a class="dropdown-item" href="https://sosmt.gov/elections/vote/" target=_blank>Montana</a>
-              <a class="dropdown-item" href="https://www.nebraska.gov/apps-sos-voter-registration/" target=_blank>Nebraska</a>
-              <a class="dropdown-item" href="https://www.registertovotenv.gov/SOSVoterServices/registration/step0.aspx" target=_blank>Nevada</a>
-              <a class="dropdown-item" href="https://sos.nh.gov/elections/voters/register-to-vote/" target=_blank>New Hampshire</a>
-              <a class="dropdown-item" href="https://voter.svrs.nj.gov/register" target=_blank>New Jersey</a>
-              <a class="dropdown-item" href="https://portal.sos.state.nm.us/OVR/WebPages/InstructionsStep1.aspx?AspxAutoDetectCookieSupport=1" target=_blank>New Mexico</a>
-              <a class="dropdown-item" href="https://voterreg.dmv.ny.gov/MotorVoter/" target=_blank>New York</a>
-              <a class="dropdown-item" href="https://www.ncdot.gov/dmv/offices-services/online/Pages/voter-registration-application.aspx" target=_blank>North Carolina</a>
-              <a class="dropdown-item" href="#" target=_blank>North Dakota</a>
-              <a class="dropdown-item" href="https://olvr.ohiosos.gov/" target=_blank>Ohio</a>
-              <a class="dropdown-item" href="https://www.ok.gov/elections/Voter_Info/Register_to_Vote/index.html" target=_blank>Oklahoma</a>
-              <a class="dropdown-item" href="https://sos.oregon.gov/voting/Pages/registration.aspx?lang=en" target=_blank>Oregon</a>
-              <a class="dropdown-item" href="https://www.pavoterservices.pa.gov/Pages/VoterRegistrationApplication.aspx" target=_blank>Pennsylvania</a>
-              <a class="dropdown-item" href="https://vote.sos.ri.gov/Home/RegistertoVote?ActiveFlag=1" target=_blank>Rhode Island</a>
-              <a class="dropdown-item" href="https://info.scvotes.sc.gov/eng/ovr/start.aspx" target=_blank>South Carolina</a>
-              <a class="dropdown-item" href="https://sdsos.gov/elections-voting/voting/register-to-vote/default.aspx" target=_blank>South Dakota</a>
-              <a class="dropdown-item" href="https://ovr.govote.tn.gov/" target=_blank>Tennessee</a>
-              <a class="dropdown-item" href="https://www.votetexas.gov/register/index.html" target=_blank>Texas</a>
-              <a class="dropdown-item" href="https://secure.utah.gov/voterreg/login.html?selection=REGISTER" target=_blank>Utah</a>
-              <a class="dropdown-item" href="https://sos.vermont.gov/elections/voters/registration/" target=_blank>Vermont</a>
-              <a class="dropdown-item" href="https://vote.elections.virginia.gov/Registration/DmvLookup" target=_blank>Virginia</a>
-              <a class="dropdown-item" href="https://olvr.votewa.gov/" target=_blank>Washington</a>
-              <a class="dropdown-item" href="https://ovr.sos.wv.gov/Register/Landing#Qualifications" target=_blank>West Virginia</a>
-              <a class="dropdown-item" href="https://myvote.wi.gov/en-us/RegisterToVote" target=_blank>Wisconsin</a>
-              <a class="dropdown-item" href="https://sos.wyo.gov/elections/state/registeringtovote.aspx" target=_blank>Wyoming</a>
+              <a class="dropdown-item" href="https://www.alabamainteractive.org/sos/voter_registration/voterRegistrationWelcome.action" target="_blank">Alabama</a>
+              <a class="dropdown-item" href="https://voterregistration.alaska.gov/Registration/RegistrationDetails?haveValidAKDL=true" target="_blank">Alaska</a>
+              <a class="dropdown-item" href="https://servicearizona.com/VoterRegistration/register?execution=e1s1" target="_blank">Arizona</a>
+              <a class="dropdown-item" href="https://www.sos.arkansas.gov/elections/voter-information/voter-registration-information/" target="_blank">Arkansas</a>
+              <a class="dropdown-item" href="https://registertovote.ca.gov/" target="_blank">California</a>
+              <a class="dropdown-item" href="https://www.sos.state.co.us/voter/pages/pub/olvr/verifyNewVoter.xhtml" target="_blank">Colorado</a>
+              <a class="dropdown-item" href="https://voterregistration.ct.gov/OLVR/welcome.do" target="_blank">Connecticut</a>
+              <a class="dropdown-item" href="https://ivote.de.gov/VoterView/registrant/newregistrant" target="_blank">Delaware</a>
+              <a class="dropdown-item" href="https://registertovoteflorida.gov/home" target="_blank">Florida</a>
+              <a class="dropdown-item" href="https://registertovote.sos.ga.gov/GAOLVR/welcome.do#no-back-button" target="_blank">Georgia</a>
+              <a class="dropdown-item" href="https://olvr.hawaii.gov/" target="_blank">Hawaii</a>
+              <a class="dropdown-item" href="https://elections.sos.idaho.gov/ElectionLink/ElectionLink/ApplicationInstructions.aspx" target="_blank">Idaho</a>
+              <a class="dropdown-item" href="https://ova.elections.il.gov/RegistrationClosed.aspx" target="_blank">Illinois</a>
+              <a class="dropdown-item" href="https://indianavoters.in.gov/" target="_blank">Indiana</a>
+              <a class="dropdown-item" href="https://mymvd.iowadot.gov/Account/Login?ReturnUrl=%2fVoterRegistration" target="_blank">Iowa</a>
+              <a class="dropdown-item" href="https://www.kdor.ks.gov/Apps/VoterReg/Default.aspx" target="_blank">Kansas</a>
+              <a class="dropdown-item" href="https://vrsws.sos.ky.gov/ovrweb/" target="_blank">Kentucky</a>
+              <a class="dropdown-item" href="https://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx?Referrer=https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx" target="_blank">Louisiana</a>
+              <a class="dropdown-item" href="https://www.maine.gov/sos/cec/elec/voter-info/votreg.html" target="_blank">Maine</a>
+              <a class="dropdown-item" href="https://voterservices.elections.maryland.gov/OnlineVoterRegistration/InstructionsStep1" target="_blank">Maryland</a>
+              <a class="dropdown-item" href="https://www.sec.state.ma.us/ele/eleifv/howreg.htm" target="_blank">Massachusetts</a>
+              <a class="dropdown-item" href="https://mvic.sos.state.mi.us/RegisterVoter" target="_blank">Michigan</a>
+              <a class="dropdown-item" href="https://www.sos.state.mn.us/elections-voting/register-to-vote/" target="_blank">Minnesota</a>
+              <a class="dropdown-item" href="https://www.msvoterid.ms.gov/Pages/VoterIDHowToRegister.htm" target="_blank">Mississippi</a>
+              <a class="dropdown-item" href="https://s1.sos.mo.gov/elections/voterregistration" target="_blank">Missouri</a>
+              <a class="dropdown-item" href="https://sosmt.gov/elections/vote/" target="_blank">Montana</a>
+              <a class="dropdown-item" href="https://www.nebraska.gov/apps-sos-voter-registration/" target="_blank">Nebraska</a>
+              <a class="dropdown-item" href="https://www.registertovotenv.gov/SOSVoterServices/registration/step0.aspx" target="_blank">Nevada</a>
+              <a class="dropdown-item" href="https://sos.nh.gov/elections/voters/register-to-vote/" target="_blank">New Hampshire</a>
+              <a class="dropdown-item" href="https://voter.svrs.nj.gov/register" target="_blank">New Jersey</a>
+              <a class="dropdown-item" href="https://portal.sos.state.nm.us/OVR/WebPages/InstructionsStep1.aspx?AspxAutoDetectCookieSupport=1" target="_blank">New Mexico</a>
+              <a class="dropdown-item" href="https://voterreg.dmv.ny.gov/MotorVoter/" target="_blank">New York</a>
+              <a class="dropdown-item" href="https://www.ncdot.gov/dmv/offices-services/online/Pages/voter-registration-application.aspx" target="_blank">North Carolina</a>
+              <a class="dropdown-item" href="#" target="_blank">North Dakota</a>
+              <a class="dropdown-item" href="https://olvr.ohiosos.gov/" target="_blank">Ohio</a>
+              <a class="dropdown-item" href="https://www.ok.gov/elections/Voter_Info/Register_to_Vote/index.html" target="_blank">Oklahoma</a>
+              <a class="dropdown-item" href="https://sos.oregon.gov/voting/Pages/registration.aspx?lang=en" target="_blank">Oregon</a>
+              <a class="dropdown-item" href="https://www.pavoterservices.pa.gov/Pages/VoterRegistrationApplication.aspx" target="_blank">Pennsylvania</a>
+              <a class="dropdown-item" href="https://vote.sos.ri.gov/Home/RegistertoVote?ActiveFlag=1" target="_blank">Rhode Island</a>
+              <a class="dropdown-item" href="https://info.scvotes.sc.gov/eng/ovr/start.aspx" target="_blank">South Carolina</a>
+              <a class="dropdown-item" href="https://sdsos.gov/elections-voting/voting/register-to-vote/default.aspx" target="_blank">South Dakota</a>
+              <a class="dropdown-item" href="https://ovr.govote.tn.gov/" target="_blank">Tennessee</a>
+              <a class="dropdown-item" href="https://www.votetexas.gov/register/index.html" target="_blank">Texas</a>
+              <a class="dropdown-item" href="https://secure.utah.gov/voterreg/login.html?selection=REGISTER" target="_blank">Utah</a>
+              <a class="dropdown-item" href="https://sos.vermont.gov/elections/voters/registration/" target="_blank">Vermont</a>
+              <a class="dropdown-item" href="https://vote.elections.virginia.gov/Registration/DmvLookup" target="_blank">Virginia</a>
+              <a class="dropdown-item" href="https://olvr.votewa.gov/" target="_blank">Washington</a>
+              <a class="dropdown-item" href="https://ovr.sos.wv.gov/Register/Landing#Qualifications" target="_blank">West Virginia</a>
+              <a class="dropdown-item" href="https://myvote.wi.gov/en-us/RegisterToVote" target="_blank">Wisconsin</a>
+              <a class="dropdown-item" href="https://sos.wyo.gov/elections/state/registeringtovote.aspx" target="_blank">Wyoming</a>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <p>
-            Picking a state will redirect you to the state's website
-          </p>
+          <p> Picking a state will redirect you to the state's website </p>
         </div>
       </div>
     </div>
   </div>
-
   <!--Modal for Check Registration-->
   <div class="modal fade" id="modalWindow-C" role="dialog">
     <div class="modal-dialog modal-sm vertical-align-center">
       <div class="modal-content">
         <div class="modal-header modal-dialog-centered">
           <h5>Check Your Registration</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         <div class="modal-body">
           <div class="dropdown">
             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownStates" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> States </button>
             <div class=" dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton" id="selectStates">
-              <a class="dropdown-item" href="https://myinfo.alabamavotes.gov/voterview" target=_blank>Alabama</a>
-              <a class="dropdown-item" href="https://myvoterinformation.alaska.gov/" target=_blank>Alaska</a>
-              <a class="dropdown-item" href="https://my.arizona.vote/WhereToVote.aspx?s=individual" target=_blank>Arizona</a>
-              <a class="dropdown-item" href="https://www.voterview.ar-nova.org/voterview" target=_blank>Arkansas</a>
-              <a class="dropdown-item" href="https://voterstatus.sos.ca.gov/" target=_blank>California</a>
-              <a class="dropdown-item" href="https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml" target=_blank>Colorado</a>
-              <a class="dropdown-item" href="https://portaldir.ct.gov/sots/LookUp.aspx" target=_blank>Connecticut</a>
-              <a class="dropdown-item" href="https://ivote.de.gov/voterview" target=_blank>Delaware</a>
-              <a class="dropdown-item" href="https://registration.elections.myflorida.com/CheckVoterStatus" target=_blank>Florida</a>
-              <a class="dropdown-item" href="https://www.mvp.sos.ga.gov/MVP/mvp.do" target=_blank>Georgia</a>
-              <a class="dropdown-item" href="https://olvr.hawaii.gov/" target=_blank>Hawaii</a>
-              <a class="dropdown-item" href="https://elections.sos.idaho.gov/ElectionLink/ElectionLink/VoterSearch.aspx" target=_blank>Idaho</a>
-              <a class="dropdown-item" href="https://ova.elections.il.gov/RegistrationLookup.aspx" target=_blank>Illinois</a>
-              <a class="dropdown-item" href="https://indianavoters.in.gov/" target=_blank>Indiana</a>
-              <a class="dropdown-item" href="https://sos.iowa.gov/elections/voterreg/regtovote/search.aspxn" target=_blank>Iowa</a>
-              <a class="dropdown-item" href="https://myvoteinfo.voteks.org/VoterView" target=_blank>Kansas</a>
-              <a class="dropdown-item" href="https://vrsws.sos.ky.gov/VIC/" target=_blank>Kentucky</a>
-              <a class="dropdown-item" href="https://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx?Referrer=https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx" target=_blank>Louisiana</a>
-              <a class="dropdown-item" href="https://www.maine.gov/sos/cec/elec/voter-info/votreg.html" target=_blank>Maine</a>
-              <a class="dropdown-item" href="https://voterservices.elections.maryland.gov/votersearch" target=_blank>Maryland</a>
-              <a class="dropdown-item" href="https://www.sec.state.ma.us/VoterRegistrationSearch/MyVoterRegStatus.aspx" target=_blank>Massachusetts</a>
-              <a class="dropdown-item" href="https://mvic.sos.state.mi.us/Voter/Index" target=_blank>Michigan</a>
-              <a class="dropdown-item" href="https://mnvotes.sos.state.mn.us/VoterStatus.aspx" target=_blank>Minnesota</a>
-              <a class="dropdown-item" href="https://www.msegov.com/sos/voter_registration/AmIRegistered" target=_blank>Mississippi</a>
-              <a class="dropdown-item" href="https://s1.sos.mo.gov/elections/voterlookup/" target=_blank>Missouri</a>
-              <a class="dropdown-item" href="https://app.mt.gov/voterinfo/" target=_blank>Montana</a>
-              <a class="dropdown-item" href="https://www.votercheck.necvr.ne.gov/voterview" target=_blank>Nebraska</a>
-              <a class="dropdown-item" href="https://www.nvsos.gov/votersearch/" target=_blank>Nevada</a>
-              <a class="dropdown-item" href="https://app.sos.nh.gov/Public/PartyInfo.aspx" target=_blank>New Hampshire</a>
-              <a class="dropdown-item" href="https://voter.svrs.nj.gov/registration-check" target=_blank>New Jersey</a>
-              <a class="dropdown-item" href="https://voterportal.servis.sos.state.nm.us/WhereToVote.aspx?AspxAutoDetectCookieSupport=1" target=_blank>New Mexico</a>
-              <a class="dropdown-item" href="https://voterlookup.elections.ny.gov/" target=_blank>New York</a>
-              <a class="dropdown-item" href="https://vt.ncsbe.gov/RegLkup/" target=_blank>North Carolina</a>
-              <a class="dropdown-item" href="#" target=_blank>North Dakota</a>
-              <a class="dropdown-item" href="https://voterlookup.ohiosos.gov/voterlookup.aspx" target=_blank>Ohio</a>
-              <a class="dropdown-item" href="https://okvoterportal.okelections.us/" target=_blank>Oklahoma</a>
-              <a class="dropdown-item" href="https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do" target=_blank>Oregon</a>
-              <a class="dropdown-item" href="https://www.pavoterservices.pa.gov/Pages/voterregistrationstatus.aspx" target=_blank>Pennsylvania</a>
-              <a class="dropdown-item" href="https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=01" target=_blank>Rhode Island</a>
-              <a class="dropdown-item" href="https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx" target=_blank>South Carolina</a>
-              <a class="dropdown-item" href="https://vip.sdsos.gov/viplogin.aspx" target=_blank>South Dakota</a>
-              <a class="dropdown-item" href="https://tnmap.tn.gov/voterlookup/" target=_blank>Tennessee</a>
-              <a class="dropdown-item" href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target=_blank>Texas</a>
-              <a class="dropdown-item" href="https://votesearch.utah.gov/voter-search/search/search-by-voter/voter-info" target=_blank>Utah</a>
-              <a class="dropdown-item" href="https://mvp.vermont.gov/" target=_blank>Vermont</a>
-              <a class="dropdown-item" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status" target=_blank>Virginia</a>
-              <a class="dropdown-item" href="https://voter.votewa.gov/WhereToVote.aspx" target=_blank>Washington</a>
-              <a class="dropdown-item" href="https://services.sos.wv.gov/Elections/Voter/AmIRegisteredToVote" target=_blank>West Virginia</a>
-              <a class="dropdown-item" href="https://myvote.wi.gov/en-us/MyVoterInfo" target=_blank>Wisconsin</a>
-              <a class="dropdown-item" href="https://sos.wyo.gov/Elections/Docs/WYCountyClerks_AbsRequest_VRChange.pdf" target=_blank>Wyoming</a>
+              <a class="dropdown-item" href="https://myinfo.alabamavotes.gov/voterview" target="_blank">Alabama</a>
+              <a class="dropdown-item" href="https://myvoterinformation.alaska.gov/" target="_blank">Alaska</a>
+              <a class="dropdown-item" href="https://my.arizona.vote/WhereToVote.aspx?s=individual" target="_blank">Arizona</a>
+              <a class="dropdown-item" href="https://www.voterview.ar-nova.org/voterview" target="_blank">Arkansas</a>
+              <a class="dropdown-item" href="https://voterstatus.sos.ca.gov/" target="_blank">California</a>
+              <a class="dropdown-item" href="https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml" target="_blank">Colorado</a>
+              <a class="dropdown-item" href="https://portaldir.ct.gov/sots/LookUp.aspx" target="_blank">Connecticut</a>
+              <a class="dropdown-item" href="https://ivote.de.gov/voterview" target="_blank">Delaware</a>
+              <a class="dropdown-item" href="https://registration.elections.myflorida.com/CheckVoterStatus" target="_blank">Florida</a>
+              <a class="dropdown-item" href="https://www.mvp.sos.ga.gov/MVP/mvp.do" target="_blank">Georgia</a>
+              <a class="dropdown-item" href="https://olvr.hawaii.gov/" target="_blank">Hawaii</a>
+              <a class="dropdown-item" href="https://elections.sos.idaho.gov/ElectionLink/ElectionLink/VoterSearch.aspx" target="_blank">Idaho</a>
+              <a class="dropdown-item" href="https://ova.elections.il.gov/RegistrationLookup.aspx" target="_blank">Illinois</a>
+              <a class="dropdown-item" href="https://indianavoters.in.gov/" target="_blank">Indiana</a>
+              <a class="dropdown-item" href="https://sos.iowa.gov/elections/voterreg/regtovote/search.aspxn" target="_blank">Iowa</a>
+              <a class="dropdown-item" href="https://myvoteinfo.voteks.org/VoterView" target="_blank">Kansas</a>
+              <a class="dropdown-item" href="https://vrsws.sos.ky.gov/VIC/" target="_blank">Kentucky</a>
+              <a class="dropdown-item" href="https://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx?Referrer=https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx" target="_blank">Louisiana</a>
+              <a class="dropdown-item" href="https://www.maine.gov/sos/cec/elec/voter-info/votreg.html" target="_blank">Maine</a>
+              <a class="dropdown-item" href="https://voterservices.elections.maryland.gov/votersearch" target="_blank">Maryland</a>
+              <a class="dropdown-item" href="https://www.sec.state.ma.us/VoterRegistrationSearch/MyVoterRegStatus.aspx" target="_blank">Massachusetts</a>
+              <a class="dropdown-item" href="https://mvic.sos.state.mi.us/Voter/Index" target="_blank">Michigan</a>
+              <a class="dropdown-item" href="https://mnvotes.sos.state.mn.us/VoterStatus.aspx" target="_blank">Minnesota</a>
+              <a class="dropdown-item" href="https://www.msegov.com/sos/voter_registration/AmIRegistered" target="_blank">Mississippi</a>
+              <a class="dropdown-item" href="https://s1.sos.mo.gov/elections/voterlookup/" target="_blank">Missouri</a>
+              <a class="dropdown-item" href="https://app.mt.gov/voterinfo/" target="_blank">Montana</a>
+              <a class="dropdown-item" href="https://www.votercheck.necvr.ne.gov/voterview" target="_blank">Nebraska</a>
+              <a class="dropdown-item" href="https://www.nvsos.gov/votersearch/" target="_blank">Nevada</a>
+              <a class="dropdown-item" href="https://app.sos.nh.gov/Public/PartyInfo.aspx" target="_blank">New Hampshire</a>
+              <a class="dropdown-item" href="https://voter.svrs.nj.gov/registration-check" target="_blank">New Jersey</a>
+              <a class="dropdown-item" href="https://voterportal.servis.sos.state.nm.us/WhereToVote.aspx?AspxAutoDetectCookieSupport=1" target="_blank">New Mexico</a>
+              <a class="dropdown-item" href="https://voterlookup.elections.ny.gov/" target="_blank">New York</a>
+              <a class="dropdown-item" href="https://vt.ncsbe.gov/RegLkup/" target="_blank">North Carolina</a>
+              <a class="dropdown-item" href="#" target="_blank">North Dakota</a>
+              <a class="dropdown-item" href="https://voterlookup.ohiosos.gov/voterlookup.aspx" target="_blank">Ohio</a>
+              <a class="dropdown-item" href="https://okvoterportal.okelections.us/" target="_blank">Oklahoma</a>
+              <a class="dropdown-item" href="https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do" target="_blank">Oregon</a>
+              <a class="dropdown-item" href="https://www.pavoterservices.pa.gov/Pages/voterregistrationstatus.aspx" target="_blank">Pennsylvania</a>
+              <a class="dropdown-item" href="https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=01" target="_blank">Rhode Island</a>
+              <a class="dropdown-item" href="https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx" target="_blank">South Carolina</a>
+              <a class="dropdown-item" href="https://vip.sdsos.gov/viplogin.aspx" target="_blank">South Dakota</a>
+              <a class="dropdown-item" href="https://tnmap.tn.gov/voterlookup/" target="_blank">Tennessee</a>
+              <a class="dropdown-item" href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target="_blank">Texas</a>
+              <a class="dropdown-item" href="https://votesearch.utah.gov/voter-search/search/search-by-voter/voter-info" target="_blank">Utah</a>
+              <a class="dropdown-item" href="https://mvp.vermont.gov/" target="_blank">Vermont</a>
+              <a class="dropdown-item" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/status" target="_blank">Virginia</a>
+              <a class="dropdown-item" href="https://voter.votewa.gov/WhereToVote.aspx" target="_blank">Washington</a>
+              <a class="dropdown-item" href="https://services.sos.wv.gov/Elections/Voter/AmIRegisteredToVote" target="_blank">West Virginia</a>
+              <a class="dropdown-item" href="https://myvote.wi.gov/en-us/MyVoterInfo" target="_blank">Wisconsin</a>
+              <a class="dropdown-item" href="https://sos.wyo.gov/Elections/Docs/WYCountyClerks_AbsRequest_VRChange.pdf" target="_blank">Wyoming</a>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <p>
-            Picking a state will redirect you to the state's website
-          </p>
+          <p> Picking a state will redirect you to the state's website </p>
         </div>
       </div>
     </div>
   </div>
-
-
   <!--footer-->
-  <footer class="footer border-top pt-md-4">
-    {% include "footer.html" %}
-  </footer>
+  <footer class="footer border-top pt-md-4"> {% include "footer.html" %} </footer>
+  <!-- JavaScript for alert -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- JS for modal window-->
+  <script>
+    $('#btn-R').click(function() {
+      $('#modalWindow-R').modal('show');
+    });
+    $('#btn-C').click(function() {
+      $('#modalWindow-C').modal('show');
+    });
+  </script>
 </body>
 
 </html>
-
-<!-- JavaScript for alert -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-<!-- JS for modal window-->
-<script>
-  $('#btn-R').click(function() {
-    $('#modalWindow-R').modal('show');
-  });
-  $('#btn-C').click(function() {
-    $('#modalWindow-C').modal('show');
-  });
-</script>
