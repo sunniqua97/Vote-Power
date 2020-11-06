@@ -9,7 +9,7 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='map.js') }}"></script>
   <!--Replace {YOUR-KEY-HERE} with your API key-->
-  <script defer="" src="https://maps.googleapis.com/maps/api/js?key={YOUR-KEY-HERE}&amp;callback=searchAutocomplete&amp;libraries=places&amp;v=weekly">
+  <script defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBmHslN_WHtBkMfAzu9d8v8-paa38Q6aM&amp;callback=searchAutocomplete&amp;libraries=places&amp;v=weekly">
   </script>
 </head>
 
@@ -67,13 +67,11 @@
         </div>
         <div class="col-md-5 col-6">
           {% for item in office %}
-          <ul style="list-style-type:none;">
             {% for item2 in item.officialIndices %}
-            <li>
+            <ul style="list-style-type:none;">
               {{item.name}}
-            </li>
+            </ul>
             {% endfor %}
-          </ul>
           {% endfor %}
         </div>
       </div>
