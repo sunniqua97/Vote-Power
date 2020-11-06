@@ -56,3 +56,9 @@ def rep_search(address):
     req = requests.get(url, params=params)
     data = req.json()
     return data
+
+#States data from json
+def states():
+    f = open('states.json')
+    data = json.load(f)
+    return data

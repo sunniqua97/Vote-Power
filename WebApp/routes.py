@@ -14,7 +14,9 @@ def home():
 
 @app.route('/registration',methods=['GET'])
 def registration():
-    return render_template("registration.html")
+    test = api.states()
+    state = test['states']
+    return render_template("registration.html",state=state)
 
 @app.route('/pollsite',methods=['GET','POST'])
 def pollsite():
@@ -40,7 +42,7 @@ def voteinfo():
             address = request.form.get('address')
             test = api.rep_search(address)
             office =  test['offices']
-            official=test['officials']
+            official = test['officials']
         except KeyError:
             flash("error")
     return render_template("voteinfo.html",form=form,office=office,official=official)
