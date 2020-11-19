@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -8,32 +8,55 @@
   <link rel="stylesheet" href="../static/styles/styles.css">
 </head>
 
-<!-- Navbar -->
-<header>
-  {% include "nav.html" %}
-</header>
-<!--jumbotron-->
-<div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
-  <div class="container">
-    <h1 class="display-4 text-center text-light font-weight-bold pt-5">Upcoming Elections</h1>
-  </div>
-</div>
-
 <body class="d-flex flex-column" style="min-height: 100vh">
-  <main class="flex-fill">
-    <div class="col-xs-1">
-
+  <header> {% include "nav.html" %} </header>
+  <!--jumbotron-->
+  <div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
+    <div class="container">
+      <h1 class="display-4 text-center text-light font-weight-bold pt-5">Upcoming Elections</h1>
     </div>
-  </main>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" >
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Region</th>
+                  <th>Election Name</th>
+                  <th>Election Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              {%for x in electionData%}
+              <tbody>
+                <tr>
+                  {%if 'state' in x.ocdDivisionId %}
+                  <th>{{x.ocdDivisionId}}</th>
+                  {%else%}
+                  <th>{{x.ocdDivisionId}}</th>
+                  {%endif%}
+                  <td>{{x.name}}</td>
+                  <td>{{x.electionDay}}</td>
+                  <td></td>
+                </tr>
+                <tr></tr>
+              </tbody>
+              {%endfor%}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--footer-->
-  <footer class="footer border-top pt-md-4">
-    {% include "footer.html" %}
-  </footer>
+  <footer class="footer border-top pt-md-4"> {% include "footer.html" %} </footer>
+  <!-- JavaScript for alert -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
-<!-- JavaScript for alert -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

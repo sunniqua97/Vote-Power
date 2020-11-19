@@ -49,7 +49,12 @@ def voteinfo():
 
 @app.route('/upcomingelections',methods=['GET'])
 def upcomingelections():
-    return render_template("upcomingelections.html")
+    try:
+        test = api.election_search()
+        electionData = test['elections']
+    except KeyError:
+        flash("error")
+    return render_template("upcomingelections.html",electionData=electionData)
 
 if __name__ == "__main__":
     app.run(debug=True)

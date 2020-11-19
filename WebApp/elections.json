@@ -1,0 +1,23 @@
+{
+  "elections": [
+    {
+      "id": "2000",
+      "name": "VIP Test Election",
+      "electionDay": "2021-06-06",
+      "ocdDivisionId": "ocd-division/country:us"
+    },
+	{
+      "id": "3000",
+      "name": "Alabama House District 49 - Special General Election",
+      "electionDay": "2020-11-17",
+      "ocdDivisionId": "ocd-division/country:us/state:al"
+    },
+	{
+      "id": "4000",
+      "name": "Mississippi General and Special Runoff Election",
+      "electionDay": "2020-11-24",
+      "ocdDivisionId": "ocd-division/country:us/state:ms"
+    }
+  ],
+  "kind": "civicinfo#electionsQueryResponse"
+}

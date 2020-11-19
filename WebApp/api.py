@@ -7,12 +7,13 @@ from flask import flash
 import logging
 # get a key here https://console.developers.google.com/apis/credentials
 key = os.getenv('CIVICS_API_KEY')
-
+electionId = 2000
 # Google Civics VoterInfoQuery API to get pollsite location
 def poll_search(address):
     params = {
         'address': address,
-        'key': key
+        'key': key,
+        'electionId': electionId
     }
     #address.replace('+','%20')
     # call api
@@ -60,5 +61,17 @@ def rep_search(address):
 #States data from json
 def states():
     f = open('states.json')
+    data = json.load(f)
+    return data
+
+#upcoming elections Google Civic electionQuery
+def election_search():
+    # params = {
+    #     'key': key
+    # }
+    # url = 'https://civicinfo.googleapis.com/civicinfo/v2/elections?'
+    # req = requests.get(url,params=params)
+    # data = req.json()
+    f = open('elections.json')
     data = json.load(f)
     return data
