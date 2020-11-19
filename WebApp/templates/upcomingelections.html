@@ -6,9 +6,22 @@
   <title>{{title}}VotePower - Upcoming Elections</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/styles/styles.css">
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+  <script type="text/javascript">
+window.addeventasync = function(){
+    addeventatc.settings({
+        appleical  : {show:false},
+        google     : {show:true, text:"Google"},
+        office365  : {show:false},
+        outlook    : {show:false},
+        outlookcom : {show:true, text:"Outlook"},
+        yahoo      : {show:true, text:"Yahoo"}
+    });
+};
+</script>
 </head>
 
-<body class="d-flex flex-column" style="min-height: 100vh">
+<body class="d-flex flex-column" style="min-height: 100vh" onload="calendar()">
   <header> {% include "nav.html" %} </header>
   <!--jumbotron-->
   <div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
@@ -19,24 +32,36 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-12" >
+        <div class="col-md-12">
           <div class="table-responsive">
             <table class="table table-bordered ">
+              <small>
+                *note these elections are subject to change
+              </small>
               <thead class="thead-dark">
                 <tr>
-                  <th>State</th>
+                  <th>Region</th>
                   <th>Election Name</th>
                   <th>Election Date</th>
+                  <th></th>
                 </tr>
               </thead>
               {%for x in electionData%}
               <tbody>
                 <tr>
-                  {%if x.ocdDivisionId %}
-                  <td STYLE="text-transform:uppercase">{{x.ocdDivisionId[-2:]}}</td>
+                  {%if x.ocdDivisionId%}
+                 <td STYLE="text-transform:uppercase">{{x.ocdDivisionId[-2:]}}</td>
                   {%endif%}
                   <td>{{x.name}}</td>
                   <td>{{x.electionDay}}</td>
+                  <td>
+                    <div title="Add to Calendar" class="addeventatc">
+                      Add to Calendar
+                      <span class="start">{{x.electionDay}}</span>
+                      <span class="title">{{x.name}}</span>
+                      <span class="all_day_event">true</span>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
               {%endfor%}

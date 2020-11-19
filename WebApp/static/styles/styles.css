@@ -38,3 +38,15 @@ body {
   height:60px;
   width:60px;
 }
+
+.addeventatc {visibility:hidden;}
+
+/* Make sure the options layer / dropdown is always visible */
+.addeventatc_dropdown {display:block!important;}
+
+/* Some demo styling of the options */
+.addeventatc_dropdown span {display:inline-block;margin:2px;padding:0px 8px;background:#666;color:#fff;border-radius:4px;cursor:pointer;font:14px/30px Roboto,serif;box-shadow:1px 1px 5px 0px rgba(0,0,0,0.3);}
+.addeventatc_dropdown span em {font-size:12px;color:#ccc;}
+
+/* Remove the AddEvent credits */
+.addeventatc_dropdown .copyx {display:none;}
