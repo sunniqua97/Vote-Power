@@ -17,6 +17,12 @@
       "name": "Mississippi General and Special Runoff Election",
       "electionDay": "2020-11-24",
       "ocdDivisionId": "ocd-division/country:us/state:ms"
+    },
+	{
+      "id": "5000",
+      "name": "Georgia General Runoff Election",
+      "electionDay": "2020-12-05",
+      "ocdDivisionId": "ocd-division/country:us/state:ga"
     }
   ],
   "kind": "civicinfo#electionsQueryResponse"
