@@ -24,25 +24,20 @@
             <table class="table table-bordered ">
               <thead class="thead-dark">
                 <tr>
-                  <th>Region</th>
+                  <th>State</th>
                   <th>Election Name</th>
                   <th>Election Date</th>
-                  <th></th>
                 </tr>
               </thead>
               {%for x in electionData%}
               <tbody>
                 <tr>
-                  {%if 'state' in x.ocdDivisionId %}
-                  <th>{{x.ocdDivisionId}}</th>
-                  {%else%}
-                  <th>{{x.ocdDivisionId}}</th>
+                  {%if x.ocdDivisionId %}
+                  <td STYLE="text-transform:uppercase">{{x.ocdDivisionId[-2:]}}</td>
                   {%endif%}
                   <td>{{x.name}}</td>
                   <td>{{x.electionDay}}</td>
-                  <td></td>
                 </tr>
-                <tr></tr>
               </tbody>
               {%endfor%}
             </table>
