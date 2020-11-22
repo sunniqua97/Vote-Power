@@ -5,23 +5,40 @@
   <meta charset="utf-8">
   <title>{{title}}VotePower - Upcoming Elections</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../static/styles/styles.css">
   <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script type="text/javascript">
-window.addeventasync = function(){
-    addeventatc.settings({
-        appleical  : {show:false},
-        google     : {show:true, text:"Google"},
-        office365  : {show:false},
-        outlook    : {show:false},
-        outlookcom : {show:true, text:"Outlook"},
-        yahoo      : {show:true, text:"Yahoo"}
-    });
-};
-</script>
+    window.addeventasync = function() {
+      addeventatc.settings({
+        appleical: {
+          show: false
+        },
+        google: {
+          show: true,
+          text: "Google"
+        },
+        office365: {
+          show: false
+        },
+        outlook: {
+          show: false
+        },
+        outlookcom: {
+          show: true,
+          text: "Outlook"
+        },
+        yahoo: {
+          show: true,
+          text: "Yahoo"
+        }
+      });
+    };
+  </script>
 </head>
 
-<body class="d-flex flex-column" style="min-height: 100vh" onload="calendar()">
+<body class="d-flex flex-column" style="min-height: 100vh">
   <header> {% include "nav.html" %} </header>
   <!--jumbotron-->
   <div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
@@ -34,27 +51,27 @@ window.addeventasync = function(){
       <div class="row">
         <div class="col-md-12">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table class="table table-bordered" id="electionTable" cellspacing="0" width="100%">
               <small>
                 *note these elections are subject to change
               </small>
               <thead class="thead-dark">
                 <tr>
-                  <th>Region</th>
-                  <th>Election Name</th>
-                  <th>Election Date</th>
+                  <th onclick="w3.sortHTML('#electionTable', '.item', 'td:nth-child(1)')" style="cursor:pointer">Region<i class="fa fa-fw fa-sort"></i></th>
+                  <th onclick="w3.sortHTML('#electionTable', '.item', 'td:nth-child(2)')" style="cursor:pointer">Election Name<i class="fa fa-fw fa-sort"></i></th>
+                    <th onclick="w3.sortHTML('#electionTable', '.item', 'td:nth-child(3)')" style="cursor:pointer">Election Date<i class="fa fa-fw fa-sort"></i></th>
                   <th></th>
                 </tr>
               </thead>
               {%for x in electionData%}
               <tbody>
-                <tr>
+                <tr class="item">
                   {%if x.ocdDivisionId%}
-                 <td STYLE="text-transform:uppercase">{{x.ocdDivisionId[-2:]}}</td>
+                  <td STYLE="text-transform:uppercase">{{x.ocdDivisionId[-2:]}}</td>
                   {%endif%}
                   <td>{{x.name}}</td>
                   <td>{{x.electionDay}}</td>
-                  <td>
+                  <td class="mx-2">
                     <div title="Add to Calendar" class="addeventatc">
                       Add to Calendar
                       <span class="start">{{x.electionDay}}</span>
