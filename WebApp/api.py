@@ -2,7 +2,7 @@ import requests
 import pprint
 import json
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from flask import flash
 import logging
 # get a key here https://console.developers.google.com/apis/credentials

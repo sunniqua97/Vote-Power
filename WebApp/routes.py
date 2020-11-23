@@ -53,6 +53,7 @@ def voteinfo():
 
 @app.route('/upcomingelections',methods=['GET'])
 def upcomingelections():
+    electionData = ""
     try:
         test = api.election_search()
         electionData = test['elections']
