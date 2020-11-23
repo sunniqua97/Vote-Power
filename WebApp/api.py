@@ -66,12 +66,12 @@ def states():
 
 #upcoming elections Google Civic electionQuery
 def election_search():
-    # params = {
-    #     'key': key
-    # }
-    # url = 'https://civicinfo.googleapis.com/civicinfo/v2/elections?'
-    # req = requests.get(url,params=params)
-    # data = req.json()
-    f = open('elections.json')
-    data = json.load(f)
+    params = {
+        'key': key
+    }
+    url = 'https://civicinfo.googleapis.com/civicinfo/v2/elections?'
+    req = requests.get(url,params=params)
+    data = req.json()
+    # f = open('elections.json')
+    # data = json.load(f)
     return data
