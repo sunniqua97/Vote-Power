@@ -40,10 +40,17 @@
       </div>
     </div>
   </main>
-  <table style ="text-align: center" >
+  <div class="row justify-content-center">
+    <div class="col-auto">
+  <table class="table table-hover">
+  <colgroup>
+    <col width="150">
+    <col width="300">
+    <col width="300">
+  </colgroup>
   <tr>
     <th></th>
-    <th>Name</th>
+    <th>Representative</th>
     <th>Role</th>
   </tr>
 
@@ -74,7 +81,8 @@
 
   </tbody>
   </table>
-
+    </div>
+  </div>
     <!--footer-->
     <footer class="footer border-top pt-md-4"> {% include "footer.html" %} </footer>
     <!-- JavaScript for alert -->
