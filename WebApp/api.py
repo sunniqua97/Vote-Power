@@ -6,7 +6,7 @@ import os
 from flask import flash
 import logging
 # get a key here https://console.developers.google.com/apis/credentials
-key = os.getenv('CIVICS_API_KEY')
+key = os.environ.get('CIVICS_API_KEY')
 electionId = 2000
 # Google Civics VoterInfoQuery API to get pollsite location
 def poll_search(address):
