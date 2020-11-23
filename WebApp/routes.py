@@ -37,15 +37,19 @@ def voteinfo():
     test = ""
     office = ""
     official = ""
+    republican = ""
+    democratic = ""
     if form.validate_on_submit():
         try:
             address = request.form.get('address')
             test = api.rep_search(address)
             office =  test['offices']
             official = test['officials']
+            republican = "(R)"
+            democratic = "(D)"
         except KeyError:
             flash("error")
-    return render_template("voteinfo.html",form=form,office=office,official=official)
+    return render_template("voteinfo.html",form=form,office=office,official=official,republican=republican,democratic=democratic)
 
 @app.route('/upcomingelections',methods=['GET'])
 def upcomingelections():

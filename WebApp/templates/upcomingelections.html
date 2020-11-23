@@ -38,7 +38,7 @@
   </script>
 </head>
 
-<body class="d-flex flex-column" style="min-height: 100vh">
+<body class="d-flex flex-column bg-light" style="min-height: 100vh">
   <header> {% include "nav.html" %} </header>
   <!--jumbotron-->
   <div class="jumbotron jumbotron-fluid" style="background-color:#70adb5">
@@ -52,9 +52,6 @@
         <div class="col-md-12">
           <div class="table-responsive">
             <table class="table table-bordered" id="electionTable" cellspacing="0" width="100%">
-              <small>
-                *note these elections are subject to change
-              </small>
               <thead class="thead-dark">
                 <tr>
                   <th onclick="w3.sortHTML('#electionTable', '.item', 'td:nth-child(1)')" style="cursor:pointer">Region<i class="fa fa-fw fa-sort"></i></th>
@@ -83,6 +80,9 @@
               </tbody>
               {%endfor%}
             </table>
+            <small>
+              *note these elections are subject to change
+            </small>
           </div>
         </div>
       </div>
