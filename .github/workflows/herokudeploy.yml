@@ -14,10 +14,6 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "votepower" #Must be unique in Heroku
-          heroku_email: "jason61798@gmail.com"
+          heroku_email: ${{secrets.EMAIL}}
           appdir: "WebApp" # <- This will point to the api folder in your project
-          env_file: ".env"
-        env:
-          CIVICS_API_KEY: ${{secrets.CIVICS_API_KEY}}
-          MAP_API_KEY: ${{secrets.MAP_API_KEY}}
-          
+
