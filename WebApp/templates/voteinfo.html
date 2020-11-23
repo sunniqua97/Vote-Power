@@ -40,43 +40,41 @@
       </div>
     </div>
   </main>
-  <div class="py-3 text-center border">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-2 col-6 p-4">
-          {%for item in official%}
-          <ul style="list-style-type:none;">
-            <li>
-              {%if item.photoUrl%}
-              <img src="{{item.photoUrl}}" class="rep_pic">
-              {%else%}
-              <img src="{{url_for('static',filename='blankperson.png')}}" class="rep_pic">
-              {%endif%}
-            </li>
-          </ul>
-          {%endfor%}
-        </div>
-        <div class="col-md-5 col-6">
-          {%for item in official%}
-          <ul style="list-style-type:none;">
-            <li>
-              {{item.name}}
-            </li>
-          </ul>
-          {%endfor%}
-        </div>
-        <div class="col-md-5 col-6">
-          {% for item in office %}
-            {% for item2 in item.officialIndices %}
-            <ul style="list-style-type:none;">
-              {{item.name}}
-            </ul>
-            {% endfor %}
+  <table style ="text-align: center" >
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Role</th>
+  </tr>
+
+  <tbody>
+
+    {%for item in official%}
+    {% set outer_loop = loop %}
+    <tr>
+      <td>
+        {%if item.photoUrl%}
+        <img src="{{item.photoUrl}}" class="rep_pic">
+        {%else%}
+        <img src="{{url_for('static',filename='blankperson.png')}}" class="rep_pic">
+        {%endif%}
+      </td>
+      <td>{{item.name}}</td>
+      <td>
+        {% for role in office %}
+          {% for role2 in role.officialIndices %}
+            {% if role2 == outer_loop.index0 %}
+              {{role.name}}
+            {% endif %}
           {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
+        {% endfor %}
+      </td>
+    </tr>
+    {%endfor%}
+
+  </tbody>
+  </table>
+
     <!--footer-->
     <footer class="footer border-top pt-md-4"> {% include "footer.html" %} </footer>
     <!-- JavaScript for alert -->
