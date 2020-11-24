@@ -25,7 +25,7 @@ VotePower is an all in one voter information application that aims to eliminate 
 ### Prerequisites
 * Git clone this repository 
 ```
-git clone https://github.com/Sunniyatul/Vote-Power.git
+git clone https://github.com/J-sonLi/Vote-Power.git
 ```
 * Install the latest version of [Python](https://www.python.org/downloads/)
 
