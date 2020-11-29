@@ -38,3 +38,30 @@ body {
   height:60px;
   width:60px;
 }
+
+.newsletter {
+padding: 80px 0;
+background: #19beda;
+}
+
+.newsletter .content {
+max-width: 650px;
+margin: 0 auto;
+text-align: center;
+position: relative;
+z-index: 2; }
+.newsletter .content {
+color: #243c4f;
+margin-bottom: 40px; }
+.newsletter .content .form-control {
+height: 50px;
+border-color: #ffffff;
+border-radius:0;
+}
+.newsletter .content .btn {
+min-height: 50px;
+border-radius:0;
+background: #243c4f;
+color: #fff;
+font-weight:600;
+}

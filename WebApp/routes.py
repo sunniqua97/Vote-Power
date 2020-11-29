@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, request, redirect
-from forms import AddressForm
+from forms import AddressForm, EmailForm
 import api
 import sys
 import os
@@ -8,9 +8,10 @@ import logging
 app = Flask(__name__)
 app.config.from_object('config.Config')
 
-@app.route('/',methods=['GET'])
+@app.route('/',methods=['GET','POST'])
 def home():
-    return render_template("index.html")
+    form = EmailForm()
+    return render_template("index.html",form=form)
 
 @app.route('/registration',methods=['GET'])
 def registration():
@@ -60,6 +61,7 @@ def upcomingelections():
     except KeyError:
         flash("error")
     return render_template("upcomingelections.html",electionData=electionData)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
