@@ -3,11 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{title}}VotePower</title>
+  <title>{{title}}VotePower - Voting Information</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/styles/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{url_for('static',filename='styles/styles.css')}}">
-  <script type='text/javascript' src="{{ url_for('static', filename='typewriter.js') }}"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='map.js') }}"></script>
+  <!--Replace {YOUR-KEY-HERE} with your API key-->
+  <script defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBmHslN_WHtBkMfAzu9d8v8-paa38Q6aM&amp;callback=searchAutocomplete&amp;libraries=places&amp;v=weekly">
+  </script>
+  <script type="text/javascript" src="{{ url_for('static', filename='typewriter.js')}}"></script>
 </head>
 <!--Navbar-->
 <header>
@@ -121,15 +126,18 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <form method="POST" action="">
+          <form autocomplete="off" method="POST" action="">
             {{form.hidden_tag()}}
           <div class="content">
-            <h1>SUBSCRIBE TO OUR NEWSLETTER</h1>
+            <h1>SUBSCRIBE FOR NOTIFICATIONS</h1>
             <div class="input-group col-md-12 py-2">
-              <input type="name" class="form-control" placeholder="Full Name">
+              <input type="name" name="name" class="form-control" placeholder="Full Name">
             </div>
             <div class="input-group col-md-12 py-2">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" name="recipient" class="form-control" placeholder="Email">
+            </div>
+            <div class="input-group col-md-12 py-2">
+              <input autocomplete="new-password" type="search" class="form-control" name="address" id="search_term" placeholder="Address">
             </div>
             <span class="input-group-btn col-md-12">
               <button class="btn" type="submit">Subscribe</button>

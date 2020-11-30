@@ -13,4 +13,5 @@ class AddressForm(FlaskForm):
 class EmailForm(FlaskForm):
     fullName = StringField('Full Name',validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    address = StringField('Address',validators=[DataRequired()])
     submit = SubmitField('Sign Up')
