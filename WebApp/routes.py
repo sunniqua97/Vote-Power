@@ -1,6 +1,7 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from forms import AddressForm, EmailForm
-from flask_mail import Mail, Message
+from sendgrid.helpers.mail import Mail
+from sendgrid import SendGridAPIClient
 import api
 import sys
 import os
@@ -8,26 +9,28 @@ import logging
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
-app.config['SECRET_KEY'] = 'top-secret!'
-app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'apikey'
-app.config['MAIL_PASSWORD'] = os.environ.get('SENDGRID_API_KEY')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
-mail = Mail(app)
-
+TEMPLATE_ID = 'd-ef7c6f8ef931497fbc98a58c01f398db'
+FROM_EMAIL = 'votepowertest@gmail.com'
 @app.route('/',methods=['GET','POST'])
 def home():
     form = EmailForm()
     if request.method == 'POST':
         address = request.form.get('address')
-        recipient = request.form['recipient']
-        msg = Message('Twilio SendGrid Test Email', recipients=[recipient])
-        msg.body = ('Congratulations! You have sent a test email with '
-                    'Twilio SendGrid!')
-        msg.html = "footer.html"
-        mail.send(msg)
+        full_name = request.form.get('name')
+        TO_EMAILS = request.form['recipient']
+        message = Mail(from_email = FROM_EMAIL, to_emails = TO_EMAILS)
+        message.dynamic_template_data={'full_name': full_name}
+        message.template_id = TEMPLATE_ID
+        try:
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(message)
+            code, body, headers = response.status_code, response.body, response.headers
+            print(f"Response code: {code}")
+            print(f"Response headers: {headers}")
+            print(f"Response body: {body}")
+            print("Dynamic Messages Sent!")
+        except Exception as e:
+            print("Error: {0}".format(e))
         return redirect(url_for('home'))
     return render_template("index.html",form=form)
 
