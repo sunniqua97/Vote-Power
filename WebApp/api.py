@@ -13,8 +13,8 @@ key = os.environ.get('CIVICS_API_KEY')
 def poll_search(address):
     params = {
         'address': address,
-        'key': key,
-        'electionId': electionId
+        'key': key
+        #'electionId': electionId
     }
     #address.replace('+','%20')
     # call api
