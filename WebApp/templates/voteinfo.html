@@ -114,7 +114,10 @@
                 {% endfor %}
               </td>
               <td>
+                {%if item.phones%}
                 {{item.phones[0]}}
+                {%else%}
+                {%endif%}
               </td>
               <td>
                 {%if item.emails%}
