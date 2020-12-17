@@ -1,0 +1,94 @@
+{
+  "election": {
+    "id": "7001",
+    "name": "Georgia General Runoff Election",
+    "electionDay": "2021-01-05",
+    "ocdDivisionId": "ocd-division/country:us/state:ga"
+  },
+  "normalizedInput": {
+    "line1": "115 Shady Lane",
+    "city": "Harlem",
+    "state": "GA",
+    "zip": "30814"
+  },
+  "pollingLocations": [
+    {
+      "address": {
+        "locationName": "HARLEM SENIOR CENTER",
+        "line1": "381 West Church Street",
+        "city": "Harlem",
+        "state": "GA",
+        "zip": "30814"
+      },
+      "latitude": 33.4147414,
+      "longitude": -82.3196378,
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "state": [
+    {
+      "name": "Georgia",
+      "electionAdministrationBody": {
+        "name": "STATE Board of Elections",
+        "electionInfoUrl": "http://sos.ga.gov/index.php/elections",
+        "electionRegistrationUrl": "https://registertovote.sos.ga.gov/GAOLVR/",
+        "electionRegistrationConfirmationUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "absenteeVotingInfoUrl": "http://sos.ga.gov/index.php/Elections/absentee_voting_in_georgia",
+        "votingLocationFinderUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "ballotInfoUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "electionRulesUrl": "http://sos.ga.gov/index.php/Elections/register_to_vote",
+        "physicalAddress": {
+          "locationName": "STATE Board of Elections",
+          "line1": "2 MLK JR. DRIVE SUITE 802",
+          "line2": "FLOYD",
+          "line3": "WEST TOWER",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30334"
+        }
+      },
+      "local_jurisdiction": {
+        "name": "Columbia County",
+        "electionAdministrationBody": {
+          "electionInfoUrl": "https://www.columbiacountyga.gov/county/voting-and-results",
+          "correspondenceAddress": {
+            "line1": "PO BOX 919",
+            "city": "EVANS",
+            "state": "GA",
+            "zip": "30809-0919"
+          },
+          "physicalAddress": {
+            "line1": "500 FAIRCLOTH DR BLDG E",
+            "city": "EVANS",
+            "state": "GA",
+            "zip": "30809"
+          },
+          "electionOfficials": [
+            {
+              "officePhoneNumber": "(706) 868-3355",
+              "emailAddress": "ngay@columbiacountyga.gov"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "DemocracyWorks",
+            "official": false
+          }
+        ]
+      },
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "kind": "civicinfo#voterInfoResponse"
+}

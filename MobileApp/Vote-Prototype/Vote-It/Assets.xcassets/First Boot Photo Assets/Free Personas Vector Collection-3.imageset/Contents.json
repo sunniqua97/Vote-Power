@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Free Personas Vector Collection-3.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Free Personas Vector Collection-03@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Free Personas Vector Collection-03@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
