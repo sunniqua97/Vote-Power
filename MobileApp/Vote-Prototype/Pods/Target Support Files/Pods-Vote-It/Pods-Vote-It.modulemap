@@ -1,0 +1,6 @@
+framework module Pods_Vote_It {
+  umbrella header "Pods-Vote-It-umbrella.h"
+
+  export *
+  module * { export * }
+}
