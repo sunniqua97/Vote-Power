@@ -1,5 +1,5 @@
 # VotePower
-
+Built by James Poon(Web), Mathew Soto(iOS), Jason Li(Web) & Sunniyatul Quaderin (iOS)
 
 ## Table of Contents
 * [About the Project](#about-the-project)
